@@ -39,6 +39,9 @@ import ConfirmationService from "primevue/confirmationservice";
 import DialogService from "primevue/dialogservice";
 import ToastService from "primevue/toastservice";
 
+import i18n from "./i18n.js";
+import SelectButton from "primevue/selectbutton";
+
 // Default App Instance
 const app = createApp(App);
 
@@ -58,6 +61,7 @@ app.use(PrimeVue, {ripple: true})
     .component('pv-data-table',     DataTable)
     .component('pv-dialog',         Dialog)
     .component('pv-select',         Select)
+    .component('pv-select-button', SelectButton)
     .component('pv-file-upload',    FileUpload)
     .component('pv-float-label',    FloatLabel)
     .component('pv-icon-field',     IconField)
@@ -72,6 +76,9 @@ app.use(PrimeVue, {ripple: true})
     .component('pv-textarea',       Textarea)
     .component('pv-toolbar',        Toolbar)
     .component('pv-toast',          Toast);
+
+// Vue i18n
+app.use(i18n);
 
 // Mount App
 app.mount('#app');
