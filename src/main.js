@@ -11,6 +11,9 @@ import PrimeVue from 'primevue/config';
 // PrimeVue CSS
 import 'primeflex/primeflex.css';
 
+// PrimeVue Theme
+import Aura from '@primevue/themes/aura';
+
 // PrimeVue Icons
 import 'primeicons/primeicons.css';
 import Toast from "primevue/toast";
@@ -49,7 +52,7 @@ const app = createApp(App);
 app.use(router);
 
 // PrimeVue
-app.use(PrimeVue, {ripple: true})
+app.use(PrimeVue, {theme: { preset: Aura}, ripple: true})
     .use(ConfirmationService)
     .use(DialogService)
     .use(ToastService)
