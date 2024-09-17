@@ -1,5 +1,6 @@
 <script>
-import { FilterMatchMode } from '@primevue/core/api';
+import {FilterMatchMode} from '@primevue/core/api';
+
 export default {
   name: "data-manager",
   inheritAttrs: false,
