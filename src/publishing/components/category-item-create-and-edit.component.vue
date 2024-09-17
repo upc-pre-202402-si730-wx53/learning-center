@@ -15,11 +15,11 @@ export default {
   },
   methods: {
     onCanceledRequested() {
-      this.$emit('canceled');
+      this.$emit('cancel-requested');
     },
     onSaveRequested() {
       this.submitted = true;
-      this.$emit('save', this.item);
+      this.$emit('save-requested', this.item);
     }
   }
 }
