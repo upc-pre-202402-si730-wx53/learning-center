@@ -10,7 +10,8 @@ export default {
       drawer: false,
       items: [
         {label: 'Home', to: '/home'},
-        {label: 'About', to: '/about'}
+        {label: 'About', to: '/about'},
+        {label: 'Categories', to: '/publishing/categories'}
       ]
     }
   },
