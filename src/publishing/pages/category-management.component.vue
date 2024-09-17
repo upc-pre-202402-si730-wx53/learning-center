@@ -31,9 +31,10 @@ export default {
       this.isEdit = false;
       this.submitted = false;
       this.createAndEditDialogIsVisible = true;
+      console.log(this.createAndEditDialogIsVisible);
     },
     onEditItem(item) {
-      this.category = {...item};
+      this.category = new Category(item);
       this.isEdit = true;
       this.submitted = false;
       this.createAndEditDialogIsVisible = true;
@@ -71,7 +72,7 @@ export default {
       }).catch(error => console.error(error));
     },
     updateCategory() {
-      this.categoryService.update(this.category).then(response => {
+      this.categoryService.update(this.category.id, this.category).then(response => {
         let index = this.findIndexById(this.category.id);
         this.categories[index] = new Category(response.data);
         this.notifySuccessfulAction("Category Updated");
@@ -97,6 +98,7 @@ export default {
     this.categoryService = new CategoryService();
     this.categoryService.getAll().then(response => {
       this.categories = response.data.map(category => new Category(category));
+      console.log(this.categories);
     }).catch(error => console.error(error));
   }
 }
@@ -106,10 +108,10 @@ export default {
   <div class="w-full">
     <data-manager :title=title
                   v-bind:items="categories"
-                  v-on:new-item="onNewItem"
-                  v-on:edit-item="onEditItem($event)"
-                  v-on:delete-item="onDeleteItem($event)"
-                  v-on:delete-selected-items="onDeleteSelectedItems($event)">
+                  v-on:new-item-requested="onNewItem"
+                  v-on:edit-item-requested="onEditItem($event)"
+                  v-on:delete-item-requested="onDeleteItem($event)"
+                  v-on:delete-selected-items-requested="onDeleteSelectedItems($event)">
       <template #custom-columns>
         <pv-column :sortable="true" field="id" header="Id" style="min-width: 12rem"/>
         <pv-column :sortable="true" field="name" header="Name" style="min-width: 24rem"/>
@@ -125,5 +127,24 @@ export default {
 </template>
 
 <style scoped>
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+@media screen and (max-width: 960px) {
+  :deep(.p-toolbar) {
+    flex-wrap: wrap;
+
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
 </style>
