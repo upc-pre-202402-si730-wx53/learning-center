@@ -1,6 +1,6 @@
 import http from "../../shared/services/http-common.js";
 
-export class CategoriesApiService {
+export class CategoryService {
     resourceEndpoint = "/categories";
 
     getAll() {
