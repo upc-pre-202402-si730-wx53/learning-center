@@ -14,7 +14,15 @@
     },
     {
       "id": 4,
-      "name": "Category 4"
+      "name": "Category 4b"
+    },
+    {
+      "id": 5,
+      "name": "Category 5"
+    },
+    {
+      "id": 6,
+      "name": "Category 5a"
     }
   ]
 }
