@@ -25,7 +25,7 @@ export default {
      * This method is used to cancel the operation. It emits the 'canceled' event.
      */
     onCancel() {
-      this.$emit('canceled');
+      this.$emit('cancel-requested');
     },
 
     /**
@@ -34,7 +34,7 @@ export default {
      * This method is used to save the entity. It emits the 'saved' event.
      */
     onSave() {
-      this.$emit('saved', this.entity);
+      this.$emit('save-requested', this.entity);
     },
 
     /**

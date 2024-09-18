@@ -14,7 +14,7 @@ export default {
     }
   },
   methods: {
-    onCanceledRequested() {
+    onCancelRequested() {
       this.$emit('cancel-requested');
     },
     onSaveRequested() {
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <create-and-edit :entity="item" :visible="visible" entity-name="Category" @cancelled="onCanceledRequested" @saved="onSaveRequested">
+  <create-and-edit :entity="item" :visible="visible" entity-name="Category" @cancel-requested="onCancelRequested" @save-requested="onSaveRequested">
     <template #content>
       <div class="p-fluid">
         <div class="field mt-5">
