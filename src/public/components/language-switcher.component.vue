@@ -1,9 +1,7 @@
 <script>
-import PvSelectButton from "@/main.js";
 
 export default {
   name: "language-switcher",
-  components: {PvSelectButton},
   data(){
     return {
       languages: ['en', 'es'],

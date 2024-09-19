@@ -1,7 +1,7 @@
 import './assets/main.css'
 
 import {createApp} from 'vue'
-import App from './App.vue'
+import App from './app.vue'
 import PrimeVue from 'primevue/config';
 import router from './routes/index.js';
 import i18n from "@/i18n.js";
@@ -16,6 +16,10 @@ import Column from "primevue/column";
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
 import SelectButton from "primevue/selectbutton";
+import Drawer from "primevue/drawer";
+
+// PrimeVue Theme
+import Aura from '@primevue/themes/aura';
 
 const app = createApp(App);
 
@@ -23,15 +27,24 @@ const app = createApp(App);
 app.use(router);
 
 // PrimeVue
-app.use(PrimeVue, {ripple: true})
+app.use(PrimeVue, {
+        ripple: true,
+        theme: {
+            preset: Aura,
+            darkModeSelector: 'system',
+            cssLayer: false
+        }
+    }
+)
     .component('pv-button', Button)
     .component('pv-confirm-dialog', ConfirmDialog)
     .component('pv-column', Column)
     .component('pv-data-table', DataTable)
     .component('pv-dialog', Dialog)
+    .component('pv-drawer', Drawer)
     .component('pv-select-button', SelectButton)
     .component('pv-toast', Toast)
-    .component('pv-toolbar', Toolbar)
+    .component('pv-toolbar', Toolbar);
 
 // Vue i18n
 app.use(i18n);
