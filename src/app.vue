@@ -25,6 +25,7 @@ export default {
 
 <template>
   <pv-toast/>
+  <pv-confirm-dialog/>
   <header>
     <pv-toolbar class="bg-primary">
       <template #start>

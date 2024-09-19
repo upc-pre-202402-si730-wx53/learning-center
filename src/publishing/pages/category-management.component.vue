@@ -53,6 +53,7 @@ export default {
       this.isEdit = false;
     },
     onSaveRequested(item) {
+      console.log('onSaveRequested');
       this.submitted = true;
       if (this.category.name.trim()) {
         if (item.id) {
@@ -73,8 +74,10 @@ export default {
     },
     updateCategory() {
       this.categoryService.update(this.category.id, this.category).then(response => {
+        console.log('updateCategory');
         let index = this.findIndexById(this.category.id);
         this.categories[index] = new Category(response.data);
+        console.log(this.categories);
         this.notifySuccessfulAction("Category Updated");
       }).catch(error => console.error(error));
     },
