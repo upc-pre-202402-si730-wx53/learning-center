@@ -20,6 +20,8 @@ import Drawer from "primevue/drawer";
 
 // PrimeVue Theme
 import Aura from '@primevue/themes/aura';
+import FloatLabel from "primevue/floatlabel";
+import InputText from "primevue/inputtext";
 
 const app = createApp(App);
 
@@ -42,6 +44,8 @@ app.use(PrimeVue, {
     .component('pv-data-table', DataTable)
     .component('pv-dialog', Dialog)
     .component('pv-drawer', Drawer)
+    .component('pv-float-label', FloatLabel)
+    .component('pv-input-text', InputText)
     .component('pv-select-button', SelectButton)
     .component('pv-toast', Toast)
     .component('pv-toolbar', Toolbar);
