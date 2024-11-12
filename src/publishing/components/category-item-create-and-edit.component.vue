@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <create-and-edit :entity="item" :visible="visible" entity-name="Category" @cancel-requested="onCancelRequested" @save-requested="onSaveRequested">
+  <create-and-edit :entity="item" :visible="visible" entity-name="Category" @cancel-action-requested="onCancelRequested" @save-action-requested="onSaveRequested">
     <template #content>
       <div class="p-fluid">
         <div class="field mt-5">

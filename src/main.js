@@ -44,12 +44,17 @@ import ToastService from "primevue/toastservice";
 
 import i18n from "./i18n.js";
 import SelectButton from "primevue/selectbutton";
+import {createPinia} from "pinia";
 
 // Default App Instance
 const app = createApp(App);
 
 // Router
 app.use(router);
+
+// Pinia
+const pinia = createPinia();
+app.use(pinia);
 
 // PrimeVue
 app.use(PrimeVue, {theme: { preset: Aura}, ripple: true})
